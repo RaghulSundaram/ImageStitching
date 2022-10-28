@@ -43,9 +43,7 @@ for i in range(len(disjoint_set)):
 
 for key in disjoint:
     (status, disjoint[key]) = stitcher.stitch([images[i] for i in disjoint[key]])
-    if status != 0:
-        print('Hi')
-    else:
+    if status == 0:
         cv2.imwrite(str(key)+".png", disjoint[key])
         # cv2.imshow(str(key), disjoint[key])
         # cv2.waitKey(0)
